@@ -65,6 +65,8 @@ theorem mem_iff {s : Finset α} :
 
 instance : SetLike (Set.powersetCard α n) α := SetLike.instSubtype
 
+instance : PartialOrder (n.Combination α) := .ofSetLike (n.Combination α) α
+
 @[simp]
 theorem coe_coe {s : Set.powersetCard α n} :
     ((s : Finset α) : Set α) = s := rfl
